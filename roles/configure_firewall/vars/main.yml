@@ -7,4 +7,5 @@ firewall_services:
   - "http"
 
 security_packages:
+  - "firewalld"
   - "httpd"
