@@ -18,4 +18,4 @@
 - name: "SCORED | 1.1.1.2 | PATCH | Remove freevxfs module"
   modprobe:
     name: freevxfs
-    state: absent---
+    state: absent
