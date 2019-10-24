@@ -1,6 +1,6 @@
 ---
 # tasks file for configure_firewall
-- name: lastest firewall verson installed
+- name: lastest security packages verson installed
   yum:
     name: "{{ item }}"
     state: lastest
