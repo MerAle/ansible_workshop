@@ -1,0 +1,21 @@
+---
+# tasks file for configure_firewall
+- name: lastest firewall verson installed
+  yum:
+    name: "{{ item }}"
+    state: lastest
+  with_items: "{{ security_packages }}"
+- name: firewall enabled and running
+  service:
+    name: "{{ item }}"
+    enable: true
+    state: started
+  with_items: "{{ services_to_enable }}"
+- name: Configure firewalld
+  firewalld:
+    service: "{{ item }}"
+    permanent: true
+    state: enabled
+    immediate: ture
+  with_items: "{{ firewall_services }}"
+

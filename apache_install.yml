@@ -13,21 +13,25 @@
     include_role:
       name: install_apache
 
-  - name: latest firewalld version installed
-    yum:
-      name: firewalld
-      state: latest
-  - name: firewalld enabled and running
-    service:
-      name: firewalld
-      enabled: true
-      state: started
-  - name: firewalld permits http service
-    firewalld:
-      service: http
-      permanent: true
-      state: enabled
-      immediate: true
+  - name: Configure firewall
+    include_role:
+      name: configure_firewall
+
+#  - name: latest firewalld version installed
+#    yum:
+#      name: firewalld
+#      state: latest
+#  - name: firewalld enabled and running
+#    service:
+#      name: firewalld
+#      enabled: true
+#      state: started
+#  - name: firewalld permits http service
+#    firewalld:
+#      service: http
+#      permanent: true
+#      state: enabled
+#      immediate: true
 
 #  - name: Apache enabled and running
 #    service:
@@ -56,7 +60,7 @@
       state: present
     when: not epel_repofile_result.stat.exists
     ignore_errors: "{{ ansible_check_mode }}"
-  - name: intall cowsay
-    yum:
-      name: cowsay
-      state: latest
+#  - name: intall cowsay
+#    yum:
+#      name: cowsay
+#      state: latest
