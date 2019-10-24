@@ -3,7 +3,7 @@
 - name: lastest Apache version installed
   yum:
     name: "{{ packages_to_install }}"
-    state: lastest
+    state: latest
   tags:
     - cowsay
 
