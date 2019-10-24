@@ -7,7 +7,7 @@
 - name: firewall enabled and running
   service:
     name: "{{ item }}"
-    enable: true
+    enabled: true
     state: started
   with_items: "{{ services_to_enable }}"
 - name: Configure firewalld
