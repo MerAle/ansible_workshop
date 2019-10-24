@@ -2,9 +2,8 @@
 # tasks file for configure_firewall
 - name: lastest security packages verson installed
   yum:
-    name: "{{ item }}"
+    name: "{{ security_packages }}"
     state: latest
-  with_items: "{{ security_packages }}"
 - name: firewall enabled and running
   service:
     name: "{{ item }}"
