@@ -3,7 +3,7 @@
 - name: lastest security packages verson installed
   yum:
     name: "{{ item }}"
-    state: lastest
+    state: latest
   with_items: "{{ security_packages }}"
 - name: firewall enabled and running
   service:
