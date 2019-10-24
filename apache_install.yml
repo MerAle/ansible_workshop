@@ -11,6 +11,13 @@
     include_role:
       name: configure_firewall
 
+  - name: Setup security hardening
+    include_role:
+      name: security
+
+  - name: Change motd of the system
+    include_role:
+      name: set_mmotd
 
   - name: Check if EPEL repo is already configured.
     stat:
