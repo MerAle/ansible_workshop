@@ -8,5 +8,5 @@ firewall_services:
 
 security_packages:
   - "httpd"
-  - "cowsay"
+#  - "cowsay"
   - "sl"
