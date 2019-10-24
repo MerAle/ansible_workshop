@@ -1,6 +1,7 @@
 ---
 # vars file for configure_firewall
 services_to_enable: 
+  - "firewalld"
   - "httpd"
 
 firewall_services:
